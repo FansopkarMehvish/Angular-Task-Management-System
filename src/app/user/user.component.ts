@@ -8,29 +8,29 @@ import { Component, EventEmitter, Input, input, Output, output, computed} from '
 })
 export class UserComponent {
   
-  // @Input({required: true}) id!: string;
-  // @Input({required: true}) avatar!: string;
-  // @Input({required: true}) name!: string;
-  // @Output() select = new EventEmitter();
+  @Input({required: true}) id!: string;
+  @Input({required: true}) avatar!: string;
+  @Input({required: true}) name!: string;
+  @Output() select = new EventEmitter<string>();
 
-  // get imagePath(){
-  //   return 'assets/users/' + this.avatar;
-  // }
-  
-  // onSelectUser(){
-  //   this.select.emit(this.id);
-  // }
-  
-  id= input.required<string>();
-  avatar= input.required<string>();
-  name= input.required<string>();
-  select = output<string>();
-
-  imagePath = computed(() => {
-    return 'assets/users/' + this.avatar();
-  });
+  get imagePath(){
+    return 'assets/users/' + this.avatar;
+  }
 
   onSelectUser(){
-    this.select.emit(this.id());
+    this.select.emit(this.id);
   }
+  
+  // id= input.required<string>();
+  // avatar= input.required<string>();
+  // name= input.required<string>();
+  // select = output<string>();
+
+  // imagePath = computed(() => {
+  //   return 'assets/users/' + this.avatar();
+  // });
+
+  // onSelectUser(){
+  //   this.select.emit(this.id());
+  // }
 }
