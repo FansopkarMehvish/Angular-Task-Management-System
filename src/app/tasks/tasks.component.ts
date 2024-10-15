@@ -8,6 +8,6 @@ import { Component, Input } from '@angular/core';
   styleUrl: './tasks.component.css'
 })
 export class TasksComponent {
-  // @Input() name?: string;
-  @Input() name : string | undefined;
+  @Input() name?: string;
+  // @Input() name : string | undefined;
 }
