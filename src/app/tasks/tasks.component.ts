@@ -16,36 +16,13 @@ export class TasksComponent {
   // @Input() name : string | undefined;
   isAddingTask: boolean = false;
 
-  tasks = [
-    {
-      id: 't1',
-      userId: 'u1',
-      title: 'Master Angular',
-      summary: 'Learn all basic and advanced features of Angular',
-      dueDate: '2025-12-31',
-    },
-    {
-      id: 't2',
-      userId: 'u3',
-      title: 'Build first prototype',
-      summary: 'Build a first prototype of the online shop website',
-      dueDate: '2024-05-31',
-    },
-    {
-      id: 't3',
-      userId: 'u3',
-      title: 'Prepare issue template',
-      summary: 'Prepare and describe an issue template which will help with project management',
-      dueDate: '2024-06-15',
-    },
-  ];
+  
 
   get selectedUserTasks(){
-    return this.tasks.filter((task) => task.userId === this.userId)
   }
 
   onCompleteTask(id: string){
-    this.tasks = this.tasks.filter((task) => task.id !== id);
+    
   }
 
   onStartAddTask() {
@@ -57,14 +34,8 @@ export class TasksComponent {
   }
 
   onAddTask(taskData: NewTaskData){
-    this.tasks.unshift({
-      id: new Date().getTime().toString(),
-      title: taskData.title,
-      summary: taskData.summary,
-      dueDate: taskData.date,
-      userId: this.userId
-    })
-    this.isAddingTask = false;
     
+    this.isAddingTask = false;
+
   }
 }
